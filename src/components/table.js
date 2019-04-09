@@ -10,12 +10,12 @@ const Table = ({ companies }) => {
           </tr>
         </thead>
         <tbody>
-          { (companies.length > 0) ? companies.map( (companies, index) => {
+          { (companies.length > 0) ? companies.map( (company, index) => {
              return (
               <tr key={ index }>
-                <td>{ companies._id }</td>
-                <td>{ companies.name }</td>
-                <td>{ companies.homepage_url}</td>
+                <td>{ company._id }</td>
+                <td>{ company.name }</td>
+                <td>{ company.homepage_url}</td>
               </tr>
             )
            }) : <tr><td colSpan="5">Loading...</td></tr> }

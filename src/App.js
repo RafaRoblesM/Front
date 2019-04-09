@@ -5,7 +5,7 @@ class App extends Component {
      constructor(props) {
       super(props);
       this.state = {
-        droplets: []
+        company: []
       }
     }
   render() {
@@ -16,10 +16,10 @@ class App extends Component {
     );
   }
   componentDidMount() {
-    fetch('http://localhost:3000/api/droplets')
+    fetch('https://prueba6.herokuapp.com/companies')
     .then(res => res.json())
-    .then(json => json.droplets)
-    .then(droplets => this.setState({ 'droplets': droplets }))
+    .then(json => json.company)
+    .then(company => this.setState({ 'company': company }))
   }
 }
 
