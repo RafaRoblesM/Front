@@ -1,26 +1,39 @@
 import React, { Component }  from 'react';
-import Table from './components/table.js';
+import Table from './components/Table.js';
 
 class App extends Component {
-     constructor(props) {
+    constructor(props) {
       super(props);
       this.state = {
-        company: []
+        companies: [],
       }
     }
   render() {
     return (
-      <div className="App">
-        <Table />
+      <div className="tabla">
+        <Table companies={this.state.companies}/>
       </div>
     );
   }
-  componentDidMount() {
-    fetch('https://prueba6.herokuapp.com/companies')
-    .then(res => res.json())
-    .then(json => json.company)
-    .then(company => this.setState({ 'company': company }))
-  }
+  componentDidMount(){
+    this.setState({
+       isLoading: true
+      })
+    fetch('https://prueba6.herokuapp.com/companies?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTVmZTAxNWQxMGJlMDAwNDA1ZDU0MiIsImlhdCI6MTU1NDM4MjMzN30.vIlV2FVQ1ZJ0LibsMYdlsnrsUznWZrAAgBAd5A8jpKs')
+    .then(response => {
+      console.log(response);
+      return response.json()
+   })
+    .then(companies => {
+      console.log(companies);
+      this.setState({'companies': companies.rows})
+  })
+    .catch(error => this.setState({
+       error: null, 
+       isLoading: false
+    }))
+   }
+ 
 }
 
 export default App;
