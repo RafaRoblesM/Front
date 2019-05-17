@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import App from './App';
 import getOne from './getone';
-import Create from './createCompany';
+import Create from './components/create';
 
 
 

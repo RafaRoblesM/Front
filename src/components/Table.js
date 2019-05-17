@@ -12,7 +12,7 @@ export default ({companies}) =>
         <th>url</th>
         <th></th>
         <th></th>
-        <th><Link className="w3-button w3-orange">CREATE NEW COMPANY</Link></th>
+        <th><Link to={`/post`} className="w3-button w3-orange">CREATE NEW COMPANY</Link></th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@ export default ({companies}) =>
             <td>{company.name}</td>
             <td>{company.homepage_url}</td>
             <td><Link to={`/get/${company._id}`} className="w3-button w3-green" >Mostrar</Link></td>
-            <td><button className="w3-button w3-yellow">Editar</button></td>
+            <td><Link to={`/post`} className="w3-button w3-yellow">Editar</Link></td>
             <td><button onClick={()=> remove (company._id)} className="w3-button w3-red">Eliminar</button></td>
           </tr>)
          }
