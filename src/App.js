@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import Table from './components/Table.js';
+import Table from './components/Table';
 
 class App extends Component {
     constructor(props) {
@@ -8,13 +8,6 @@ class App extends Component {
         companies: [],
       }
     }
-  render() {
-    return (
-      <div className="tabla">
-        <Table companies={this.state.companies}/>
-      </div>
-    );
-  }
   componentDidMount(){
     this.setState({
        isLoading: true
@@ -33,7 +26,12 @@ class App extends Component {
        isLoading: false
     }))
    }
- 
+   render() {
+    return (
+      <div className="tabla">
+        <Table companies={this.state.companies}/>
+      </div>
+    );
+  }
 }
-
 export default App;

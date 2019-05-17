@@ -1,14 +1,18 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 
 export default ({companies}) =>
+
     <table className="w3-table-all w3-hoverable">
     <thead>
       <tr>
         <th>Id</th>
         <th>Name</th>
         <th>url</th>
+        <th></th>
+        <th></th>
+        <th><button className="w3-button w3-orange">CREATE NEW COMPANY</button></th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +21,7 @@ export default ({companies}) =>
             <td>{company._id}</td>
             <td>{company.name}</td>
             <td>{company.homepage_url}</td>
-            <td><button className="w3-button w3-green" >Mostrar</button></td>
+            <td><Link to={`/get/${company._id}`} className="w3-button w3-green" >Mostrar</Link></td>
             <td><button className="w3-button w3-yellow">Editar</button></td>
             <td><button onClick={()=> remove (company._id)} className="w3-button w3-red">Eliminar</button></td>
           </tr>)
@@ -31,4 +35,10 @@ function remove(_id){
     console.error(err)
   });
 }
+// function change(_id){
+//   return(
+//     <Redirect to='/Opcion1'/>
+// );
+
+// }
 
