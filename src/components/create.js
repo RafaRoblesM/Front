@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
-
 class Create extends Component {
   constructor(props) {
     super(props);
   this.handleSubmit = this.handleSubmit.bind(this);
-  this.state={ name:"", homepage_url:""} 
+  this.state={ name:'', homepage_url:''} 
     }
 
   handleSubmit = (e) => {
@@ -20,22 +19,33 @@ class Create extends Component {
 
   render() {
     return (
-       <form onSubmit={this.handleSubmit}>
+    
+      
+      <div className="w3-container">
+       <h2>Create Company</h2>
+
+          <div className="w3-card-4 w3-dark-grey" style={{"width": "50%"}}>
+
+            <div className="w3-container w3-center">
+            <form onSubmit={this.handleSubmit}><br/>
         <input 
         placeholder="name" 
         type="text" 
         value={this.state.name} 
-        onChange={(ev)=>this.setState({name:ev.target.value})}/>
+        onChange={(ev)=>this.setState({name:ev.target.value})}/><br/><br/>
 
         <input 
         placeholder="homepage_url" 
         type="text" 
         value={this.state.homepage_url} 
-        onChange={(ev)=>this.setState({homepage_url:ev.target.value})}/>   
+        onChange={(ev)=>this.setState({homepage_url:ev.target.value})}/><br/><br/>  
 
-        <button>Submit</button>
-        <Link to={'/'}>Atrás</Link>
+        <button className="w3-button w3-green">Submit</button>
+        <Link to={'/'} className="w3-button w3-yellow">Atrás</Link>
       </form>
+          </div>
+        </div>
+        </div>
     );
   }
 }
