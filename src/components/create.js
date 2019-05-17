@@ -24,7 +24,7 @@ class Create extends Component {
       <div className="w3-container">
        <h2>Create Company</h2>
 
-          <div className="w3-card-4 w3-dark-grey" style={{"width": "50%"}}>
+          <div className="w3-card-4 w3-dark-grey" style={{"width": "20%"}}>
 
             <div className="w3-container w3-center">
             <form onSubmit={this.handleSubmit}><br/>
@@ -41,7 +41,7 @@ class Create extends Component {
         onChange={(ev)=>this.setState({homepage_url:ev.target.value})}/><br/><br/>  
 
         <button className="w3-button w3-green">Submit</button>
-        <Link to={'/'} className="w3-button w3-yellow">Atrás</Link>
+        <Link to={'/'} className="w3-button w3-yellow"  style={{"margin-left": "6%"}}>Atrás</Link>
       </form>
           </div>
         </div>

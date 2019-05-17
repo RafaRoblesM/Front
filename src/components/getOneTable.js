@@ -7,7 +7,7 @@ export default ({companies}) =>
         <th>Id</th>
         <th>Name</th>
         <th>url</th>
-        <td><Link to={'/'}>Atrás</Link></td>
+        <td><Link to={'/'} className="w3-button w3-yellow">Atrás</Link></td>
       </tr>
     </thead>
     <tbody>
