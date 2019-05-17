@@ -12,7 +12,7 @@ export default ({companies}) =>
         <th>url</th>
         <th></th>
         <th></th>
-        <th><button className="w3-button w3-orange">CREATE NEW COMPANY</button></th>
+        <th><Link className="w3-button w3-orange">CREATE NEW COMPANY</Link></th>
       </tr>
     </thead>
     <tbody>

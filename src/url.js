@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import App from './App';
 import getOne from './getone';
+import Create from './createCompany';
 
 
 
@@ -25,6 +26,12 @@ class AppRoutes extends Component {
                 exact
                 strict
                 component={getOne}
+              />
+              <Route
+                path="/post"
+                exact
+                strict
+                component={Create}
               />
               <Redirect to="/" />
             </Switch>
