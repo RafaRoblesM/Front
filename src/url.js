@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 
 import App from './App';
-import getOne from './getone';
+import more from './getone';
 import Create from './components/create';
 
 
@@ -25,7 +25,7 @@ class AppRoutes extends Component {
                 path="/get/:id"
                 exact
                 strict
-                component={getOne}
+                component={more}
               />
               <Route
                 path="/post"

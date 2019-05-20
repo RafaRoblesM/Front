@@ -4,8 +4,21 @@ class Create extends Component {
   constructor(props) {
     super(props);
   this.handleSubmit = this.handleSubmit.bind(this);
-  this.state={ name:'', homepage_url:''} 
+  this.state={ 
+      name:'', 
+      homepage_url:''
     }
+  }
+
+  handleChange = (e) => {
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name]: value,
+    })
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();

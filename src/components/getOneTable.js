@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-export default ({companies}) =>
+export default ({company}) =>
     <table className="w3-table-all w3-hoverable">
     <thead>
       <tr>
@@ -11,7 +11,7 @@ export default ({companies}) =>
       </tr>
     </thead>
     <tbody>
-      {companies.map(company => 
+      {company.map(company => 
           <tr>
             <td>{company._id}</td>
             <td>{company.name}</td>
