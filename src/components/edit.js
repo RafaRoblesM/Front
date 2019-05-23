@@ -36,7 +36,7 @@ class Edit extends Component {
     return (
       <div className="w3-container">
        <h2>Edit Company</h2>
-
+        <p>ID: {this.props.match.params.id}</p>
           <div className="w3-card-4 w3-dark-grey" style={{"width": "20%"}}>
 
             <div className="w3-container w3-center">
