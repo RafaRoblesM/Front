@@ -30,7 +30,8 @@ class App extends Component {
     return (
       <div className="tabla">
         <Table companies={this.state.companies}/>
-        
+        {console.log(this.state.companies)
+        }
       </div>
     );
   }

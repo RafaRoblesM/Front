@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import App from './App';
 import more from './getone';
 import Create from './components/create';
+import Edit from './components/edit';
 
 
 
@@ -32,6 +33,12 @@ class AppRoutes extends Component {
                 exact
                 strict
                 component={Create}
+              />
+               <Route
+                path="/edit/:id"
+                exact
+                strict
+                component={Edit}
               />
               <Redirect to="/" />
             </Switch>
