@@ -3,33 +3,25 @@ import {Link} from 'react-router-dom'
 class Edit extends Component {
   constructor(props) {
     super(props);
-  this.handleSubmit = this.handleSubmit.bind(this);
-  this.state={ 
-      name:'', 
-      homepage_url:''
-    }
+    this.state={name:"", homepage_url:""}
   }
-
-  handleChange = (e) => {
-    const target = e.target;
-    const name = target.name;
-    const value = target.value;
-
-    this.setState({
-      [name]: value,
-    })
-  }
-
   handleSubmit = (e) => {
     e.preventDefault();
     const _id= this.props.match.params.id
 
     fetch('https://prueba6.herokuapp.com/companies/'+ _id +'?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTVmZTAxNWQxMGJlMDAwNDA1ZDU0MiIsImlhdCI6MTU1NDM4MjMzN30.vIlV2FVQ1ZJ0LibsMYdlsnrsUznWZrAAgBAd5A8jpKs',    
-    {method:"PUT"})
-
-    .then(response => {
-      return response.json()
-   })
+    {method:"PUT",
+    body:JSON.stringify({
+      "name": this.state.name,
+      "homepage_url": this.state.homepage_url
+    }), headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+    console.log(response);
+    return response.json()
+ })
+   
   }
 
   render() {
